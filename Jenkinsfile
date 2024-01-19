@@ -1,16 +1,22 @@
 pipeline {
     agent any
-    stages {
-        stage('build') {
-            steps {
-               echo "Welcome to the jenkins"
-               sh 'python hello-world.py'
+    tools {
+        maven 'm3'
     }
-  }
+
+    stages {
+        stage('build') {  
+            steps {
+                echo "Welcome to the jenkins"
+                sh 'mvn --version'
+              
+            }
+        }
+
+        }   
+
 
 }
-
-
 
 
 
